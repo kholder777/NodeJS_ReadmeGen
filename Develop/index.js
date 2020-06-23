@@ -1,14 +1,10 @@
 var inquirer = require("inquirer");
-const fs = require("fs");
-
+let fs = require("fs");
 const questions = [
 	{
 		type: "input",
-		message: "What is your Project Title?",
-		name: "projectTitle",
-		// validate: function () {
-		// 	// inspect inquirer for examples... **??but not required for this assignment.**
-		// },
+		message: "What is your Repo Name?",
+		name: "repoName",
 	},
 	{
 		type: "input",
@@ -50,6 +46,16 @@ const questions = [
 		message: "Questions",
 		name: "questions",
 	},
+	{
+		type: "input",
+		message: "Enter GitHub profile picture URL",
+		name: "profilePic",
+	},
+	{
+		type: "input",
+		message: "What is your GitHub email?",
+		name: "email",
+	},
 ];
 
 function init() {
@@ -59,9 +65,121 @@ function init() {
 		// 	init();
 		// }
 		console.log(response);
-	});
-	fs.appendFile("./README.md", questions.response, (err) => {
-		if (err) throw err;
+
+		// fs.open("./README.md", questions.response, response);
+		// {
+
+		// }
+
+		fs.appendFileSync("README.md", "# " + response.repoName + "\n", function (
+			err
+		) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
+		fs.appendFileSync(
+			"README.md",
+			response.projectDescription + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("success");
+				}
+			}
+		);
+		fs.appendFileSync(
+			"README.md",
+			"- " + response.tableOfContents + "\n\n",
+			function (err) {
+				if (err) {
+					// make this an array. use push to add to the array, use join to turn array into a string.
+					console.log(err);
+				} else {
+					console.log("success");
+				}
+			}
+		);
+		fs.appendFileSync("README.md", response.installation + "\n", function (
+			err
+		) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
+		fs.appendFileSync("README.md", "# " + response.usage + "\n", function (
+			err
+		) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
+		fs.appendFileSync("README.md", "# " + response.license + "\n", function (
+			err
+		) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
+		fs.appendFileSync(
+			"README.md",
+			"```sh\n" + response.contributing + "\n```\n\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("success");
+				}
+			}
+		);
+		fs.appendFileSync("README.md", "## " + response.tests + "\n", function (
+			err
+		) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
+		fs.appendFileSync("README.md", response.questions + "\n\n", function (err) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
+		fs.appendFileSync("README.md", response.profilePic + "\n\n", function (
+			err
+		) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
+		fs.appendFileSync("README.md", response.email + "\n", function (err) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
+
+		// fs.writeFile("README.md", response, "utf8", function (err) {
+		// 	if (err) return console.log("something went wrong.");
+		// });
+		fs.open("./README.md", function (response) {
+			// console.log(response); // will print your responseObject
+		});
 	});
 }
 
