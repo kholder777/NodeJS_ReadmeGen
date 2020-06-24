@@ -11,14 +11,14 @@ const questions = [
 		message: "Describe your project",
 		name: "projectDescription",
 	},
+	// {
+	// 	type: "input",
+	// 	message: "List Table of Contents.",
+	// 	name: "tableOfContents",
+	// },
 	{
 		type: "input",
-		message: "List Table of Contents.",
-		name: "tableOfContents",
-	},
-	{
-		type: "input",
-		message: "Installation instructions",
+		message: "Installation instructions:",
 		name: "installation",
 	},
 	{
@@ -64,6 +64,7 @@ function init() {
 		// 	console.log("please enter name");
 		// 	init();
 		// }
+		// JSON.stringify(questions.response);
 		console.log(response);
 
 		// fs.open("./README.md", questions.response, response);
@@ -93,8 +94,8 @@ function init() {
 		);
 		fs.appendFileSync(
 			"README.md",
-			"- " + response.tableOfContents + "\n\n",
-			function (err) {
+			"## Table of Contents \n\n - Repo Name \n - Project Description \n - Table of Contents (you are here.)\n - Installation Instructions\n - Usage\n - License\n - Contributing\n - Tests\n - Questions\n - GitHub Profile Picture\n - GitHub eMail\n\n",
+			function () {
 				if (err) {
 					// make this an array. use push to add to the array, use join to turn array into a string.
 					console.log(err);
@@ -112,7 +113,7 @@ function init() {
 				console.log("success");
 			}
 		});
-		fs.appendFileSync("README.md", "# " + response.usage + "\n", function (
+		fs.appendFileSync("README.md", "## " + response.usage + "\n", function (
 			err
 		) {
 			if (err) {
@@ -121,7 +122,7 @@ function init() {
 				console.log("success");
 			}
 		});
-		fs.appendFileSync("README.md", "# " + response.license + "\n", function (
+		fs.appendFileSync("README.md", "## " + response.license + "\n", function (
 			err
 		) {
 			if (err) {
@@ -177,9 +178,9 @@ function init() {
 		// fs.writeFile("README.md", response, "utf8", function (err) {
 		// 	if (err) return console.log("something went wrong.");
 		// });
-		fs.open("./README.md", function (response) {
-			// console.log(response); // will print your responseObject
-		});
+		// fs.open("README.md", function (response) {
+		// 	console.log(response); // will print your responseObject
+		// });
 	});
 }
 
