@@ -92,13 +92,17 @@ function init() {
 			}
 		});
 
+		// fs.appendFileSync("README.md",
+		// [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+
 		fs.appendFileSync(
 			"README.md",
-			"http://img.shields.io/github/license/" +
+			"[![Maintenance](http://img.shields.io/github/license/" +
 				response.username +
 				"/" +
 				response.repoName +
-				"?color=green",
+				"?color=green)]" +
+				"\n",
 			function (err) {
 				if (err) {
 					console.log(err);

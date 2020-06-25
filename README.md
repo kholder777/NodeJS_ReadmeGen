@@ -1,10 +1,6 @@
 # Password_Generator
 
-http://img.shields.io/github/license/kholder777/Password_Generator?color=greena
-
-pas
-
-gen
+[![Maintenance](http://img.shields.io/github/license/kholder777/Password_Generator?color=green)]
 
 ## Table of Contents
 
@@ -20,7 +16,7 @@ gen
 - GitHub Profile Picture
 - GitHub eMail
 
-inst
+asdf
 
 ## Usage
 
@@ -36,6 +32,8 @@ cont
 
 ## Teststes
 
-4ques
+quest
+
+asdf
 
 kholder777@yahoo.com
