@@ -53,6 +53,16 @@ const questions = [
 	},
 	{
 		type: "input",
+		message: "What is your GitHub username?",
+		name: "username",
+	},
+	// {
+	// 	type: "input",
+	// 	message: "What is your badge info?"
+	// 	name: "badge",
+	// },
+	{
+		type: "input",
 		message: "What is your GitHub email?",
 		name: "email",
 	},
@@ -81,6 +91,23 @@ function init() {
 				console.log("success");
 			}
 		});
+
+		fs.appendFileSync(
+			"README.md",
+			"http://img.shields.io/github/license/" +
+				response.username +
+				"/" +
+				response.repoName +
+				"?color=green",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("success");
+				}
+			}
+		);
+
 		fs.appendFileSync(
 			"README.md",
 			response.projectDescription + "\n",
@@ -94,10 +121,9 @@ function init() {
 		);
 		fs.appendFileSync(
 			"README.md",
-			"## Table of Contents \n\n - Repo Name \n - Project Description \n - Table of Contents (you are here.)\n - Installation Instructions\n - Usage\n - License\n - Contributing\n - Tests\n - Questions\n - GitHub Profile Picture\n - GitHub eMail\n\n",
+			"## Table of Contents \n - Repo Name \n - Project Description \n - Table of Contents (you are here.)\n - Installation Instructions\n - Usage\n - License\n - Contributing\n - Tests\n - Questions\n - GitHub Profile Picture\n - GitHub eMail\n\n",
 			function () {
 				if (err) {
-					// make this an array. use push to add to the array, use join to turn array into a string.
 					console.log(err);
 				} else {
 					console.log("success");
@@ -113,24 +139,28 @@ function init() {
 				console.log("success");
 			}
 		});
-		fs.appendFileSync("README.md", "## " + response.usage + "\n", function (
-			err
-		) {
-			if (err) {
-				console.log(err);
-			} else {
-				console.log("success");
+		fs.appendFileSync(
+			"README.md",
+			"## Usage\n" + response.usage + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("success");
+				}
 			}
-		});
-		fs.appendFileSync("README.md", "## " + response.license + "\n", function (
-			err
-		) {
-			if (err) {
-				console.log(err);
-			} else {
-				console.log("success");
+		);
+		fs.appendFileSync(
+			"README.md",
+			"## License\n" + response.license + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("success");
+				}
 			}
-		});
+		);
 		fs.appendFileSync(
 			"README.md",
 			"```sh\n" + response.contributing + "\n```\n\n",
@@ -142,15 +172,17 @@ function init() {
 				}
 			}
 		);
-		fs.appendFileSync("README.md", "## " + response.tests + "\n", function (
-			err
-		) {
-			if (err) {
-				console.log(err);
-			} else {
-				console.log("success");
+		fs.appendFileSync(
+			"README.md",
+			"## Tests" + response.tests + "\n",
+			function (err) {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("success");
+				}
 			}
-		});
+		);
 		fs.appendFileSync("README.md", response.questions + "\n\n", function (err) {
 			if (err) {
 				console.log(err);
