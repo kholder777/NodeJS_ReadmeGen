@@ -53,6 +53,11 @@ const questions = [
 	},
 	{
 		type: "input",
+		message: "Enter GitHub Repo URL",
+		name: "repoURL",
+	},
+	{
+		type: "input",
 		message: "What is your GitHub username?",
 		name: "username",
 	},
@@ -97,12 +102,13 @@ function init() {
 
 		fs.appendFileSync(
 			"README.md",
-			"[![Maintenance](http://img.shields.io/github/license/" +
+			"[![LicenseType](http://img.shields.io/github/license/" +
 				response.username +
 				"/" +
 				response.repoName +
-				"?color=green)]" +
-				"\n",
+				"?color=green)](" +
+				response.repoURL +
+				")\n\n",
 			function (err) {
 				if (err) {
 					console.log(err);

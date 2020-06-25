@@ -1,6 +1,8 @@
 # Password_Generator
 
-[![Maintenance](http://img.shields.io/github/license/kholder777/Password_Generator?color=green)]
+[![LicenseType](http://img.shields.io/github/license/kholder777/Password_Generator?color=green)](https://github.com/kholder777/NodeJS_ReadmeGen)
+
+pwgen descr
 
 ## Table of Contents
 
@@ -16,7 +18,7 @@
 - GitHub Profile Picture
 - GitHub eMail
 
-asdf
+inst
 
 ## Usage
 
@@ -30,10 +32,10 @@ lic
 cont
 ```
 
-## Teststes
+## Teststest
 
 quest
 
-asdf
+na
 
 kholder777@yahoo.com
