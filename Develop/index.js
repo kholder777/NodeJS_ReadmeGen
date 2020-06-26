@@ -8,7 +8,7 @@ const questions = [
 	},
 	{
 		type: "input",
-		message: "Describe your project",
+		message: "Describe your project.",
 		name: "projectDescription",
 	},
 	// {
@@ -23,37 +23,37 @@ const questions = [
 	},
 	{
 		type: "input",
-		message: "Usage",
+		message: "Usage:",
 		name: "usage",
 	},
 	{
 		type: "input",
-		message: "License",
+		message: "License:",
 		name: "license",
 	},
 	{
 		type: "input",
-		message: "Contributing",
+		message: "Contributing:",
 		name: "contributing",
 	},
 	{
 		type: "input",
-		message: "Tests",
+		message: "Tests:",
 		name: "tests",
 	},
 	{
 		type: "input",
-		message: "Questions",
+		message: "Questions:",
 		name: "questions",
 	},
 	{
 		type: "input",
-		message: "Enter GitHub profile picture URL",
+		message: "Enter GitHub profile picture URL:",
 		name: "profilePic",
 	},
 	{
 		type: "input",
-		message: "Enter GitHub Repo URL",
+		message: "Enter GitHub Repo URL:",
 		name: "repoURL",
 	},
 	{
